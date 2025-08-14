@@ -1,0 +1,16 @@
+
+services:
+  oracledb:
+    build: ./database
+    container_name: oracle-db
+    environment:
+      - ORACLE_PWD=12345
+    ports:
+      - "1521:1521"
+  client:
+    build: ./client
+    container_name: oracle-client
+    depends_on:
+      - oracle-db
+    tty: true
+    stdin_open: true
