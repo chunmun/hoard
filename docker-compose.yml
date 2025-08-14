@@ -11,6 +11,6 @@ services:
     build: ./client
     container_name: oracle-client
     depends_on:
-      - oracle-db
+      - oracledb
     tty: true
     stdin_open: true
